@@ -16,6 +16,7 @@ I work hard in order to go to the scene to watch the NBA.
 <br />
 <br />
 <br />
+
 # Education
 
 **Illinois Institute of Technology**
@@ -29,6 +30,7 @@ I work hard in order to go to the scene to watch the NBA.
 <br />
 <br />
 <br /> 
+
 # Internship
 
 * Tencent, Machine Learning Engineer Intern, 2021.10 - 2022.07
@@ -36,6 +38,7 @@ I work hard in order to go to the scene to watch the NBA.
 <br />
 <br />
 <br /> 
+
 # Publications
 
 [[Google Scholar]](https://scholar.google.com/citations?user=hDl0MkwAAAAJ&hl=en)
@@ -45,6 +48,7 @@ I work hard in order to go to the scene to watch the NBA.
 <br />
 <br />
 <br />  
+
 # Projects
 
 * **Image Super Resolution**, Human Cyber Physical Intelligence Integration Lab, 2021.01 - 2021.02
@@ -54,6 +58,7 @@ I work hard in order to go to the scene to watch the NBA.
 <br />
 <br />
 <br />  
+
 # Competition
 
 * **Mathematics competition of Chinese College Student**, Awarded Third Prize, twice in 2019 and 2020 respectively.
@@ -62,6 +67,7 @@ I work hard in order to go to the scene to watch the NBA.
 <br />
 <br />
 <br />
+
 # Club
 
 * Zhuhai Mathematics Association, Head of Planning Department, 2018.07 - 2019.06
