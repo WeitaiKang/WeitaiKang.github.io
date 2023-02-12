@@ -4,7 +4,7 @@ layout: default
 # About
 Greetings! My name is Weitai Kang (康伟泰).
 
-I am a Ph.D. candidate in Computer Science at [Illinois Institute of Technology](https://www.iit.edu/). My focus of research area is Computer Vision (CV), especially **Multimodal Learning**:
+I am a first year Ph.D. in Computer Science at [Illinois Institute of Technology](https://www.iit.edu/). My focus of research area is Computer Vision (CV), especially **Multimodal Learning**:
 
 * Visual Grounding
 * Transformer explainability
