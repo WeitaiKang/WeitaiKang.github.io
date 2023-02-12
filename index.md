@@ -77,4 +77,5 @@ status of their city. Obtained an accuracy of 77.6%.
 * Zhuhai Mathematics Association, Head of Planning Department, 2018.07 - 2019.06
 
 
+Office: Room 001, Stuart Building, 10 W 31st St, Chicago, IL 60616
 Updated: 01/2023
