@@ -61,7 +61,7 @@ adjustments to maximize returns.
 status of their city. Obtained an accuracy of 77.6%.
 
 # Competition
-* Mathematics competition of Chinese College Student, Awarded Third Prize, twice in 2019 and 2020.
+* Mathematics competition of Chinese College Student, Awarded Third Prize, twice in 2019 and 2020 respectively.
 * China Undergraduate Mathematical Contest in Model, Awarded Third Prize, 2019
 * Mathematical Contest In Modeling, Awarded Successful Participant, 2019
 
