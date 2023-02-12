@@ -62,9 +62,7 @@ Sun Yat-Sen University 2020 College Student Innovation and Entrepreneurship Trai
 adjustments to maximize returns.
 
 **Research on default risk of P2P online loan based on machine learning**
-
 2018.10 - 2019.05
-
 * Build a Back-Propagation neural network to study the relationship between loan users' loan repayment status and the economic
 status of their city. Obtained an accuracy of 77.6%.
 
