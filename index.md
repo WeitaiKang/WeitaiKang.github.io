@@ -16,6 +16,8 @@ If you are interested in research collaboration feel free to contact me at **wka
 
 I work hard in order to go to the scene to watch the NBA.
 
+
+
 # Education
 
 **Illinois Institute of Technology**
@@ -27,15 +29,21 @@ I work hard in order to go to the scene to watch the NBA.
 * Previously majored in marine science, 2017 - 2018
 * Outstanding student scholarship (for four years)
 
+
+
 # Internship
 
 * Tencent, Machine Learning Engineer Intern, 2021.10 - 2022.07
 * SenseTime, Research Intern, 2021.07 - 2021.09
 
+
+
 # Publications
-[Google Scholar](https://scholar.google.com/citations?user=hDl0MkwAAAAJ&hl=en)
+[[Google Scholar]](https://scholar.google.com/citations?user=hDl0MkwAAAAJ&hl=en)
 ## 2022
 * Upcoming...
+
+
 
 # Projects
 
