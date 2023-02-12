@@ -11,6 +11,7 @@ I am a Ph.D. candidate in Computer Science at [Illinois Institute of Technology]
 * Foundation Model
 
 If you are interested in research collaboration feel free to contact me.
+
 [Email](wkang11@hawk.iit.edu)  /  [Google Scholar](https://scholar.google.com/citations?user=hDl0MkwAAAAJ&hl=en)  /  [Linkedin](https://www.linkedin.com/in/%E4%BC%9F%E6%B3%B0-%E5%BA%B7-856961247/)
 
 I work hard in order to go to the scene to watch the NBA.
@@ -67,6 +68,7 @@ I work hard in order to go to the scene to watch the NBA.
 <br />
 <br />
 <br />
+
 Office: Room 001, Stuart Building, 10 W 31st St, Chicago, IL 60616
 
 Updated: 01/2023
