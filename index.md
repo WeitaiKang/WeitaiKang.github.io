@@ -56,9 +56,9 @@ I work hard in order to go to the scene to watch the NBA.
 <br />  
 
 # Competition
-* **Mathematics competition of Chinese College Student**, Awarded Third Prize, twice in 2019 and 2020 respectively.
+* **Mathematics competition of Chinese College Student**, Awarded Third Prize, twice in 2019 and 2020 respectively
 * **China Undergraduate Mathematical Contest in Model**, Awarded Third Prize, 2019
-* **Mathematical Contest In Modeling, Awarded Successful Participant**, 2019
+* **Mathematical Contest In Modeling**, Awarded Successful Participant, 2019
 <br />
 <br />
 <br />
