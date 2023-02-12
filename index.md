@@ -10,9 +10,9 @@ I am a Ph.D. candidate in Computer Science at [Illinois Institute of Technology]
 * Transformer explainability
 * Foundation Model
 
-If you are interested in research collaboration feel free to contact me.
+If you are interested in research collaboration feel free to contact me at **wkang11@hawk.iit.edu**.
 
-[Email](email)  /  [Google Scholar](https://scholar.google.com/citations?user=hDl0MkwAAAAJ&hl=en)  /  [Linkedin](https://www.linkedin.com/in/%E4%BC%9F%E6%B3%B0-%E5%BA%B7-856961247/)
+[Linkedin](https://www.linkedin.com/in/%E4%BC%9F%E6%B3%B0-%E5%BA%B7-856961247/)  /  [Google Scholar](https://scholar.google.com/citations?user=hDl0MkwAAAAJ&hl=en)
 
 I work hard in order to go to the scene to watch the NBA.
 <br />
