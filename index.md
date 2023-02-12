@@ -17,6 +17,7 @@ I work hard in order to go to the scene to watch the NBA.
 <br />
 <br />
 # Education
+
 **Illinois Institute of Technology**
 * PhD in Computer Science, 2022 - 2026 (expected)
 * Graduate Research Assistant at [CVM Lab](https://iitcvmlab.github.io/), Advisor: [Prof. Yan Yan](https://tomyan555.github.io/)
@@ -29,19 +30,23 @@ I work hard in order to go to the scene to watch the NBA.
 <br />
 <br /> 
 # Internship
+
 * Tencent, Machine Learning Engineer Intern, 2021.10 - 2022.07
 * SenseTime, Research Intern, 2021.07 - 2021.09
 <br />
 <br />
 <br /> 
 # Publications
+
 [[Google Scholar]](https://scholar.google.com/citations?user=hDl0MkwAAAAJ&hl=en)
+
 **2022**
 * Upcoming...
 <br />
 <br />
 <br />  
 # Projects
+
 * **Image Super Resolution**, Human Cyber Physical Intelligence Integration Lab, 2021.01 - 2021.02
 * **Theory Analysis of Cosmic Gravity Based on Convolutional Neural Network**, Sun Yat-Sen University 2020 College Student Innovation and Entrepreneurship Training Program (National Level), 2020.06 - 2020.12
 * **The application of machine learning in asset allocation**, 2020.05 - 2020.10
@@ -50,6 +55,7 @@ I work hard in order to go to the scene to watch the NBA.
 <br />
 <br />  
 # Competition
+
 * **Mathematics competition of Chinese College Student**, Awarded Third Prize, twice in 2019 and 2020 respectively.
 * **China Undergraduate Mathematical Contest in Model**, Awarded Third Prize, 2019
 * **Mathematical Contest In Modeling, Awarded Successful Participant**, 2019
@@ -57,6 +63,7 @@ I work hard in order to go to the scene to watch the NBA.
 <br />
 <br />
 # Club
+
 * Zhuhai Mathematics Association, Head of Planning Department, 2018.07 - 2019.06
 <br />
 <br />
