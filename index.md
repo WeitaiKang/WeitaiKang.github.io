@@ -10,7 +10,7 @@ I am a Ph.D. candidate in Computer Science at Illinois Institute of Technology. 
 
 * Transformer explainability
 
-* Foundation Modal
+* Foundation Model
 
 If you are interested in research collaboration feel free to contact me at wkang11@hawk.iit.edu.
 
