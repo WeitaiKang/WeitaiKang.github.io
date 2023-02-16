@@ -13,8 +13,6 @@ I am a first year Ph.D. in Computer Science at [Illinois Institute of Technology
 If you are interested in research collaboration, feel free to contact me at **wkang11@hawk.iit.edu**.
 
 [Linkedin](https://www.linkedin.com/in/%E4%BC%9F%E6%B3%B0-%E5%BA%B7-856961247/)  /  [Google Scholar](https://scholar.google.com/citations?user=hDl0MkwAAAAJ&hl=en)
-
-I work hard in order to go to the scene to watch the NBA.
 <br />
 <br />
 <br />
