@@ -9,11 +9,34 @@
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 
-<style>
+<!-- <style>
   table.imgtable, table.imgtable td{
     border: none;
     /* height: auto; */
     /* text-align: left; */
+  }
+</style> -->
+<style>
+  body {
+    font-size: 18px; /* 调整整个网页的字体大小 */
+  }
+  p {
+    font-size: 18px; /* 调整段落的字体大小 */
+  }
+  name {
+    font-size: 24px; /* 调整名字的字体大小 */
+  }
+  heading {
+    font-size: 22px; /* 调整标题的字体大小 */
+  }
+  li {
+    font-size: 18px; /* 调整列表项的字体大小 */
+  }
+  table img {
+    max-width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
   }
 </style>
 
@@ -67,9 +90,9 @@
               
                 <li> <b>[05/2024]</b> My first-author paper about 3D Intention Grounding is now available on <a href='https://arxiv.org/abs/2405.18295'>arXiv</a>.</li>
               
-                <li> <b>[04/2024]</b> Our paper <b>On the Faithfulness of Vision Transformer Explanations</b> is accepted to <b>CVPR 2024</b>.</li>
+                <li> <b>[04/2024]</b> Our paper about transformer explainability benchmark is accepted to <b>CVPR 2024</b>.</li>
               
-                <li> <b>[03/2024]</b> Our paper <b>Token Transformation Matters: Towards Faithful Post-hoc Explanation for Vision Transformer</b> is accepted to <b>CVPR 2024</b>.</li>
+                <li> <b>[03/2024]</b> Our paper about transformer explainability method is accepted to <b>CVPR 2024</b>.</li>
                 
                 <li> <b>[08/2023]</b> I am a Teaching Assistant of CS 577: Deep Learning at Illinois Institute of Technology.</li>
                 
@@ -91,44 +114,46 @@
         <table class='imgtable' style="border-collapse:collapse">
           <tr>
             <td align="center" style="width:200px">
-            <a href="https://arxiv.org/abs/2404.12467">
-            <img src="images/FedCola.png" alt=""  height="110px" style='width:200px;object-fit:contain;' />
+            <a href="https://weitaikang.github.io/">
+            <img src="images/SegVG.png" alt=""  height="110px" style='width:200px;object-fit:contain;' />
               </a>
             </td>
             <td align="left">
               <p>
-                <a href="https://arxiv.org/abs/2404.12467">
-                <b>Towards Multi-modal Transformers in Federated Learning</b><br></a>
-                <b>Weitai Kang</b>, Matias Mendieta, Chen Chen<br>
-                [<a href="https://arxiv.org/abs/2404.12467">Paper</a>]
+                <a href="https://weitaikang.github.io/">
+                <b>SegVG: Transferring Object Bounding Box to Segmentation for Visual Grounding</b><br></a>
+                <b>Weitai Kang</b>, Gaowen Liu, Mubarak Shah, Yan Yan<br>
+                <i>European Conference on Computer Vision.</i><b>ECCV 2024</b>.<br>
+                [<a href="https://weitaikang.github.io/">Paper</a>][<a href='https://github.com/WeitaiKang/SegVG'>Code</a>]
               </p>
             </td>
           </tr>
           <tr>
             <td align="center" style="width:200px">
-            <a href="https://arxiv.org/abs/2405.01494">
-            <img src="images/FedDiff.png" alt=""  height="110px" style='width:200px;object-fit:contain;padding-right:10px;' />
+            <a href="https://arxiv.org/abs/2405.18295">
+            <img src="images/Intent3D.png" alt=""  height="110px" style='width:200px;object-fit:contain;padding-right:10px;' />
               </a>
             </td>
             <td align="left">
               <p>
-                <a href="https://arxiv.org/abs/2405.01494">
-                <b>Navigating Heterogeneity and Privacy in One-Shot Federated Learning with Diffusion Models</b><br></a>
-                Matias Mendieta, <b>Weitai Kang</b>, Chen Chen<br>
-                [<a href="https://arxiv.org/abs/2405.01494">Paper</a>]
+                <a href="https://arxiv.org/abs/2405.18295">
+                <b>Intent3D: 3D Object Detection in RGB-D Scans Based on Human Intention</b><br></a>
+                <b>Weitai Kang</b>, Mengxue Qu, Jyoti Kini, Yunchao Wei, Mubarak Shah, Yan Yan<br>
+                [<a href="https://arxiv.org/abs/2405.18295">Paper</a>]
               </p>
             </td>
           </tr>
-          <tr bgcolor="#ffffd0">
+          <!-- <tr bgcolor="#ffffd0"> -->
+          <tr>
             <td align="center" style="width:200px">
-              <a href="https://arxiv.org/abs/2308.09160"><img src="images/fedperfix.png" alt="FedPerfix" height="110px"  style='width:200px; object-fit:contain;'/></a>
+              <a href="https://arxiv.org/abs/2404.01415"><img src="images/fedperfix.png" alt="FedPerfix" height="110px"  style='width:200px; object-fit:contain;'/></a>
             </td>
             <td align="left">
               <p>
-                <a href="https://arxiv.org/abs/2308.09160"><b>FedPerfix: Towards Partial Model Personalization of Vision Transformers in Federated Learning</b><br></a>
-                <b>Weitai Kang</b>, Matias Mendieta, Jun Luo, Shandong Wu, Chen Chen.<br>
-                <i>2023 IEEE/CVF International Conference on Computer Vision. </i><b>ICCV 2023</b>.<br>
-                [<a href='https://arxiv.org/abs/2308.09160'>Paper</a>][<a href='https://github.com/imguangyu/FedPerfix'>Code</a>]
+                <a href="https://arxiv.org/abs/2404.01415"><b>On the Faithfulness of Vision Transformer Explanations</b><br></a>
+                Junyi Wu, <b>Weitai Kang</b>, Hao Tang, Yuan Hong, Yan Yan.<br>
+                <i>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition.</i><b>CVPR 2024</b>.<br>
+                [<a href='https://arxiv.org/abs/2404.01415'>Paper</a>]
               </p>
             </td>
           </tr>
