@@ -81,28 +81,27 @@ tr,
 p,
 a {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 18px
+  font-size: 20px; /* 原本是18px，改为20px */
 }
 
 strong {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 18px;
+  font-size: 20px; /* 原本是18px，改为20px */
 }
 
 heading {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 26px;
+  font-size: 28px; /* 原本是26px，改为28px */
 }
 
 papertitle {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 20px;
-  font-weight: 700
+  font-size: 22px; /* 原本是20px，改为22px */
 }
 
 name {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 36px;
+  font-size: 38px; /* 原本是36px，改为38px */
 }
 
 .one {
