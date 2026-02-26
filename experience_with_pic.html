@@ -1,0 +1,573 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Album - Weitai Kang</title>
+  <meta name="author" content="Weitai Kang">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      max-width: 80%;
+      max-height: 80%;
+    }
+    .caption {
+      color: white;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .close {
+      color: white;
+      position: absolute;
+      top: 10px;
+      right: 25px;
+      font-size: 35px;
+      cursor: pointer;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    .arrow {
+      margin-left: 10px;
+      font-size: 16px;
+      transition: transform 0.3s;
+    }
+    .arrow.down {
+      transform: rotate(0deg);
+    }
+    .arrow.up {
+      transform: rotate(180deg);
+    }
+    .section-content {
+      display: none;
+    }
+    /* Styling for the large image */
+    .large-image {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      margin: 20px auto;
+      display: block;
+    }
+    /* Responsive design for mobile */
+    @media (max-width: 600px) {
+      .large-image {
+        max-width: 100%;
+        margin: 10px auto;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+    /* Style for the footer link */
+    .footer {
+      text-align: center;
+      padding: 20px 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      margin-top: 20px;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .content {
+      flex: 1 0 auto;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+      justify-content: center;
+    }
+    .gallery img {
+      width: 185px;
+      height: 185px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 1px solid #ddd;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 0.5; /* Subtle effect for unloaded images */
+    }
+    .gallery img.loaded {
+      opacity: 1; /* Full opacity when loaded */
+    }
+    .modal {
+      transition: opacity 0.3s ease;
+    }
+    .modal-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+      max-height: 80%;
+    }
+    #modalImage {
+      width: 100%;
+      max-width: 1200px;
+      height: auto;
+      max-height: 60vh;
+      object-fit: contain;
+    }
+    .caption {
+      color: white;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 20px;
+    }
+    .photo-counter {
+      color: white;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+    .nav-arrow {
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      user-select: none;
+      padding: 10px;
+    }
+    .nav-arrow.left {
+      left: 10px;
+    }
+    .nav-arrow.right {
+      right: 10px;
+    }
+    .nav-arrow:hover {
+      color: #ccc;
+    }
+    @media (max-width: 768px) {
+      .gallery img {
+        width: 150px;
+        height: 150px;
+      }
+      .gallery {
+        gap: 10px;
+        padding: 10px;
+      }
+      #modalImage {
+        max-height: 50vh;
+      }
+      .caption {
+        margin-top: 15px;
+        font-size: 16px;
+      }
+      .photo-counter {
+        font-size: 14px;
+      }
+      .close {
+        font-size: 30px;
+        right: 15px;
+        top: 15px;
+      }
+      .nav-arrow {
+        font-size: 30px;
+        padding: 15px;
+      }
+      .nav-arrow.left {
+        left: 5px;
+      }
+      .nav-arrow.right {
+        right: 5px;
+      }
+    }
+    @media (max-width: 480px) {
+      .gallery img {
+        width: 120px;
+        height: 120px;
+      }
+      .caption {
+        font-size: 14px;
+      }
+      .photo-counter {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content"></div>
+  <table style="width:100%;max-width:900px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr style="padding:0px">
+                <td style="padding:2.5%;width:100%;vertical-align:middle">
+                  <img src="experiences/Friends.png" alt="Large Image" class="large-image">
+                  <p style="text-align:center">
+                    <name>Hi, my <em>FRIENDS</em>!👋</name>
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Travels Section -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:20px;width:100%;vertical-align:middle">
+                  <div class="section-header" onclick="toggleSection('travels')">
+                    <heading>✈️Travels</heading>
+                    <span class="arrow down" id="travels-arrow">▼</span>
+                  </div>
+                  <div id="travels-content" class="section-content">
+                    <div style="width: auto; height: 500px; overflow: auto; border: 1px solid #ddd;">
+                      <div class="gallery">
+                        <!-- Monterey -->
+                        <img data-src="experiences/travel/monterey bay aquarium1.JPG" alt="Monterey Bay Aquarium" onclick="openModal('experiences/travel/monterey bay aquarium1.JPG', 'Monterey Bay Aquarium | California')">
+                        <img data-src="experiences/travel/monterey bay aquarium2.JPG" alt="Monterey Bay Aquarium" onclick="openModal('experiences/travel/monterey bay aquarium2.JPG', 'Monterey Bay Aquarium | California')">
+                        <img data-src="experiences/travel/monterey bay aquarium3.JPG" alt="Monterey Bay Aquarium" onclick="openModal('experiences/travel/monterey bay aquarium3.JPG', 'Monterey Bay Aquarium | California')">
+                        <img data-src="experiences/travel/monterey bay aquarium4.JPG" alt="Monterey Bay Aquarium" onclick="openModal('experiences/travel/monterey bay aquarium4.JPG', 'Monterey Bay Aquarium | California')">
+                        <!-- Vegas -->
+                        <img data-src="experiences/travel/vegas1.JPG" alt="Las Vegas" onclick="openModal('experiences/travel/vegas1.JPG', 'Las Vegas | Nevada')">
+                        <img data-src="experiences/travel/vegas2.JPG" alt="Las Vegas" onclick="openModal('experiences/travel/vegas2.JPG', 'Las Vegas | Nevada')">
+                        <img data-src="experiences/travel/vegas3.JPG" alt="Las Vegas" onclick="openModal('experiences/travel/vegas3.JPG', 'Las Vegas | Nevada')">
+                        <!-- Antelope -->
+                        <img data-src="experiences/travel/antelope1.JPG" alt="Antelope Canyon" onclick="openModal('experiences/travel/antelope1.JPG', 'Antelope Canyon | Arizona')">
+                        <img data-src="experiences/travel/antelope2.JPG" alt="Antelope Canyon" onclick="openModal('experiences/travel/antelope2.JPG', 'Antelope Canyon | Arizona')">
+                        <img data-src="experiences/travel/antelope3.JPG" alt="Antelope Canyon" onclick="openModal('experiences/travel/antelope3.JPG', 'Antelope Canyon | Arizona')">
+                        <img data-src="experiences/travel/antelope4.JPG" alt="Antelope Canyon" onclick="openModal('experiences/travel/antelope4.JPG', 'Antelope Canyon | Arizona')">
+                        <!-- Horseshoe -->
+                        <img data-src="experiences/travel/horseshoe1.JPG" alt="Horseshoe Bend" onclick="openModal('experiences/travel/horseshoe1.JPG', 'Horseshoe Bend | Arizona')">
+                        <img data-src="experiences/travel/horseshoe2.png" alt="Horseshoe Bend" onclick="openModal('experiences/travel/horseshoe2.png', 'Horseshoe Bend | Arizona')">
+                        <!-- Grand Canyon -->
+                        <img data-src="experiences/travel/grand1.JPG" alt="Grand Canyon" onclick="openModal('experiences/travel/grand1.JPG', 'Grand Canyon National Park | Arizona')">
+                        <!-- Zion -->
+                        <img data-src="experiences/travel/zion1.png" alt="Zion" onclick="openModal('experiences/travel/zion1.png', 'Zion National Park | Utah')">
+                        <img data-src="experiences/travel/zion2.png" alt="Zion" onclick="openModal('experiences/travel/zion2.png', 'Zion National Park | Utah')">
+                        <img data-src="experiences/travel/zion3.png" alt="Zion" onclick="openModal('experiences/travel/zion3.png', 'Zion National Park | Utah')">
+                        <img data-src="experiences/travel/zion4.png" alt="Zion" onclick="openModal('experiences/travel/zion4.png', 'Zion National Park | Utah')">
+                        <!-- Rocky -->
+                        <img data-src="experiences/travel/rocky1.png" alt="Rocky Mountain" onclick="openModal('experiences/travel/rocky1.png', 'Rocky Mountain National Park | Colorado')">
+                        <img data-src="experiences/travel/rocky2.png" alt="Rocky Mountain" onclick="openModal('experiences/travel/rocky2.png', 'Rocky Mountain National Park | Colorado')">
+                        <img data-src="experiences/travel/rocky3.png" alt="Rocky Mountain" onclick="openModal('experiences/travel/rocky3.png', 'Rocky Mountain National Park | Colorado')">
+                        <img data-src="experiences/travel/rocky4.png" alt="Rocky Mountain" onclick="openModal('experiences/travel/rocky4.png', 'Rocky Mountain National Park | Colorado')">
+                        <!-- Dunes -->
+                        <img data-src="experiences/travel/Dunes1.JPG" alt="Dunes" onclick="openModal('experiences/travel/Dunes1.JPG', 'Dunes National Park | Indiana')">
+                        <img data-src="experiences/travel/Dunes2.JPG" alt="Dunes" onclick="openModal('experiences/travel/Dunes2.JPG', 'Dunes National Park | Indiana')">
+                        <img data-src="experiences/travel/Dunes3.jpg" alt="Dunes" onclick="openModal('experiences/travel/Dunes3.jpg', 'Dunes National Park | Indiana')">
+                        <!-- New York -->
+                        <img data-src="experiences/travel/NYC1.JPG" alt="Statue of Liberty" onclick="openModal('experiences/travel/NYC1.JPG', 'Statue of Liberty | New York')">
+                        <img data-src="experiences/travel/NYC2.JPG" alt="Wall Street Bull" onclick="openModal('experiences/travel/NYC2.JPG', 'Wall Street Bull | New York')">
+                        <img data-src="experiences/travel/NYC3.JPG" alt="Stock Exchange" onclick="openModal('experiences/travel/NYC3.JPG', 'Stock Exchange | New York')">
+                        <img data-src="experiences/travel/NYC4.JPG" alt="Times Square" onclick="openModal('experiences/travel/NYC4.JPG', 'Times Square | New York')">
+                        <img data-src="experiences/travel/NYC5.JPG" alt="Empire State Building" onclick="openModal('experiences/travel/NYC5.JPG', 'Empire State Building | New York')">
+                        <img data-src="experiences/travel/NYC6.JPG" alt="The FRIENDS Experience" onclick="openModal('experiences/travel/NYC6.JPG', 'The FRIENDS Experience | New York')">
+                        <img data-src="experiences/travel/NYC7.JPG" alt="Museum of Natural History" onclick="openModal('experiences/travel/NYC7.JPG', 'Museum of Natural History | New York')">
+                        <img data-src="experiences/travel/NYC8.JPG" alt="The MET" onclick="openModal('experiences/travel/NYC8.JPG', 'The MET | New York')">
+                        <!-- Chicago -->
+                        <img data-src="experiences/travel/Chicago1.JPG" alt="Starbucks Reserve" onclick="openModal('experiences/travel/Chicago1.JPG', 'Starbucks Reserve Roastery | Chicago')">
+                        <img data-src="experiences/travel/Chicago2.JPG" alt="Starbucks Reserve" onclick="openModal('experiences/travel/Chicago2.JPG', 'Starbucks Reserve Roastery | Chicago')">
+                        <img data-src="experiences/travel/Chicago3.JPG" alt="Starbucks Reserve" onclick="openModal('experiences/travel/Chicago3.JPG', 'Starbucks Reserve Roastery | Chicago')">
+                        <img data-src="experiences/travel/Chicago4.JPG" alt="Thanksgiving Parade" onclick="openModal('experiences/travel/Chicago4.JPG', 'Thanksgiving Parade | Chicago')">
+                        <img data-src="experiences/travel/Chicago5.JPG" alt="Thanksgiving Parade" onclick="openModal('experiences/travel/Chicago5.JPG', 'Thanksgiving Parade | Chicago')">
+                        <img data-src="experiences/travel/Chicago6.JPG" alt="St. Patrick Day" onclick="openModal('experiences/travel/Chicago6.JPG', 'St. Patrick Day | Chicago')">
+                        <img data-src="experiences/travel/Chicago7.JPG" alt="St. Patrick Day" onclick="openModal('experiences/travel/Chicago7.JPG', 'St. Patrick Day | Chicago')">
+                        <img data-src="experiences/travel/Chicago8.jpg" alt="Light Up" onclick="openModal('experiences/travel/Chicago8.jpg', 'Light Up | Chicago')">
+                        <img data-src="experiences/travel/Chicago9.JPG" alt="Brookfield Zoo" onclick="openModal('experiences/travel/Chicago9.JPG', 'Brookfield Zoo | Chicago')">
+                        <img data-src="experiences/travel/Chicago10.JPG" alt="Downtown" onclick="openModal('experiences/travel/Chicago10.JPG', 'Downtown | Chicago')">
+                        <img data-src="experiences/travel/Chicago11.jpg" alt="Downtown" onclick="openModal('experiences/travel/Chicago11.jpg', 'Downtown | Chicago')">
+                        <img data-src="experiences/travel/Chicago12.JPG" alt="The Bean" onclick="openModal('experiences/travel/Chicago12.JPG', 'The Bean | Chicago')">
+                        <!-- Orlando -->
+                        <img data-src="experiences/travel/Orlando1.JPG" alt="UCF" onclick="openModal('experiences/travel/Orlando1.JPG', 'University of Central Florida | Orlando')">
+                        <img data-src="experiences/travel/Orlando2.JPG" alt="Cocoa Beach" onclick="openModal('experiences/travel/Orlando2.JPG', 'Cocoa Beach | Orlando')">
+                        <img data-src="experiences/travel/Orlando4.jpg" alt="Cocoa Beach" onclick="openModal('experiences/travel/Orlando4.jpg', 'Cocoa Beach | Orlando')">
+                        <img data-src="experiences/travel/Orlando3.JPG" alt="Universal Studios" onclick="openModal('experiences/travel/Orlando3.JPG', 'Universal Studios Florida | Orlando')">
+                        <img data-src="experiences/travel/Orlando5.jpg" alt="Orlando" onclick="openModal('experiences/travel/Orlando5.jpg', 'Orlando')">
+                        <!-- San Francisco -->
+                        <img data-src="experiences/travel/SF1.JPG" alt="Painted Ladies" onclick="openModal('experiences/travel/SF1.JPG', 'Painted Ladies | San Francisco')">
+                        <img data-src="experiences/travel/SF2.JPG" alt="Palace of Fine Arts" onclick="openModal('experiences/travel/SF2.JPG', 'Palace of Fine Arts | San Francisco')">
+                        <img data-src="experiences/travel/SF3.JPG" alt="FisherMans Wharf" onclick="openModal('experiences/travel/SF3.JPG', 'FisherMans Wharf | San Francisco')">
+                        <img data-src="experiences/travel/SF4.JPG" alt="Golden Gate Bridge" onclick="openModal('experiences/travel/SF4.JPG', 'Golden Gate Bridge | San Francisco')">
+                        <img data-src="experiences/travel/SF5.jpg" alt="San Francisco" onclick="openModal('experiences/travel/SF5.jpg', 'San Francisco')">
+                        <img data-src="experiences/travel/SF6.JPG" alt="Cable Car" onclick="openModal('experiences/travel/SF6.JPG', 'Cable Car | San Francisco')">
+                        <!-- Miami -->
+                        <img data-src="experiences/travel/Miami1.JPG" alt="Miami" onclick="openModal('experiences/travel/Miami1.JPG', 'Miami')">
+                        <img data-src="experiences/travel/Miami2.JPG" alt="Miami" onclick="openModal('experiences/travel/Miami2.JPG', 'Miami')">
+                        <img data-src="experiences/travel/Miami3.JPG" alt="Miami Beach" onclick="openModal('experiences/travel/Miami3.JPG', 'Miami Beach | Miami')">
+                        <!-- Seattle -->
+                        <img data-src="experiences/travel/Seattle1.JPG" alt="Public Market" onclick="openModal('experiences/travel/Seattle1.JPG', 'Public Market Center | Seattle')">
+                        <img data-src="experiences/travel/Seattle2.jpg" alt="Seattle" onclick="openModal('experiences/travel/Seattle2.jpg', 'Seattle')">
+                        <img data-src="experiences/travel/Seattle3.jpg" alt="Seattle" onclick="openModal('experiences/travel/Seattle3.jpg', 'Seattle')">
+                        <!-- Japan -->
+                        <img data-src="experiences/travel/japan1.JPG" alt="Akihabara" onclick="openModal('experiences/travel/japan1.JPG', 'Akihabara | Japan')">
+                        <img data-src="experiences/travel/japan2.JPG" alt="Shibuya" onclick="openModal('experiences/travel/japan2.JPG', 'Shibuya | Japan')">
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Shows Section -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:20px;width:100%;vertical-align:middle">
+                  <div class="section-header" onclick="toggleSection('shows')">
+                    <heading>🎭Shows</heading>
+                    <span class="arrow down" id="shows-arrow">▼</span>
+                  </div>
+                  <div id="shows-content" class="section-content">
+                    <div style="width: auto; height: 500px; overflow: auto; border: 1px solid #ddd;">
+                      <div class="gallery">
+                        <!-- Concerts -->
+                         <img data-src="experiences/shows/Lady Gaga1.JPG" onclick="openModal('experiences/shows/Lady Gaga1.JPG', 'Lady Gaga | Concert')">
+                        <img data-src="experiences/shows/Lady Gaga2.jpg" onclick="openModal('experiences/shows/Lady Gaga2.jpg', 'Lady Gaga | Concert')">
+                        <img data-src="experiences/shows/Lady Gaga3.JPG" onclick="openModal('experiences/shows/Lady Gaga3.JPG', 'Lady Gaga | Concert')">
+                        <img data-src="experiences/shows/Katy Perry2.jpg" onclick="openModal('experiences/shows/Katy Perry2.jpg', 'Katy Perry | Concert')">
+                        <img data-src="experiences/shows/Katy Perry1.jpg" onclick="openModal('experiences/shows/Katy Perry1.jpg', 'Katy Perry | Concert')">
+                        <img data-src="experiences/shows/TheWeeknd2.jpg" onclick="openModal('experiences/shows/TheWeeknd2.jpg', 'The Weeknd | Concert')">
+                        <img data-src="experiences/shows/TheWeeknd1.JPG" onclick="openModal('experiences/shows/TheWeeknd1.JPG', 'The Weeknd | Concert')">
+                        <img data-src="experiences/shows/post-malone1.jpg" onclick="openModal('experiences/shows/post-malone1.jpg', 'Post Malone | Concert')">
+                        <img data-src="experiences/shows/post-malone2.jpg" onclick="openModal('experiences/shows/post-malone1.jpg', 'Post Malone | Concert')">
+                        <img data-src="experiences/shows/coldplay1.JPG" onclick="openModal('experiences/shows/coldplay1.JPG', 'Coldplay | Concert')">
+                        <img data-src="experiences/shows/coldplay2.JPG" onclick="openModal('experiences/shows/coldplay2.JPG', 'Coldplay | Concert')">
+                        <img data-src="experiences/shows/concert-blackpink1.jpg" onclick="openModal('experiences/shows/concert-blackpink1.jpg', 'BLACKPINK | Concert')">
+                        <img data-src="experiences/shows/concert-blackpink2.jpg" onclick="openModal('experiences/shows/concert-blackpink2.jpg', 'BLACKPINK | Concert')">
+                        <img data-src="experiences/shows/concert-ed.jpg" onclick="openModal('experiences/shows/concert-ed.jpg', 'Ed Sheeran | Concert')">
+                        <img data-src="experiences/shows/concert-sam.jpg" onclick="openModal('experiences/shows/concert-sam.jpg', 'Sam Smith | Concert')">
+                        <img data-src="experiences/shows/concert-wang.jpg" onclick="openModal('experiences/shows/concert-wang.jpg', 'Jackson Wang | Concert')">
+                        <img data-src="experiences/shows/concert-ma.jpg" onclick="openModal('experiences/shows/concert-ma.jpg', 'MaSiWei | Concert')">
+                        <!-- Musicals -->
+                        <img data-src="experiences/shows/musical-hamilton.JPG" onclick="openModal('experiences/shows/musical-hamilton.JPG', 'Hamilton | Musical')">
+                        <img data-src="experiences/shows/musical-miserable.JPG" onclick="openModal('experiences/shows/musical-miserable.JPG', 'Les Miserables | Musical')">
+                        <img data-src="experiences/shows/musical-potter.JPG" onclick="openModal('experiences/shows/musical-potter.JPG', 'Harry Potter and the Cursed Child | Musical')">
+                        <!-- Others -->
+                        <img data-src="experiences/shows/wwe.JPG" onclick="openModal('experiences/shows/wwe.JPG', 'WWE')">
+                        <!-- Comedy -->
+                        <img data-src="experiences/shows/comedy-hart.JPG" onclick="openModal('experiences/shows/comedy-hart.JPG', 'Kevin Hart | Comedy')">
+                        <img data-src="experiences/shows/comedy-ronny.JPG" onclick="openModal('experiences/shows/comedy-ronny.JPG', 'Ronny Chieng | Comedy')">
+                        <img data-src="experiences/shows/comedy-secondcity.JPG" onclick="openModal('experiences/shows/comedy-secondcity.JPG', 'The Second City | Comedy')">
+                        <img data-src="experiences/shows/comedy-trevor.JPG" onclick="openModal('experiences/shows/comedy-trevor.JPG', 'Trevor Noah | Comedy')">
+                        <img data-src="experiences/shows/comedy-roast.jpg" onclick="openModal('experiences/shows/comedy-roast.jpg', 'Tech Roast Show | Comedy')">
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Sports Section -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:20px;width:100%;vertical-align:middle">
+                  <div class="section-header" onclick="toggleSection('sports')">
+                    <heading>🏀Sports</heading>
+                    <spanigni class="arrow down" id="sports-arrow">▼</span>
+                  </div>
+                  <div id="sports-content" class="section-content">
+                    <div style="width: auto; height: 500px; overflow: auto; border: 1px solid #ddd;">
+                      <div class="gallery">
+                        <!-- NFL -->
+                        <img data-src="experiences/sport/NFL-49ers2.JPG" onclick="openModal('experiences/sport/NFL-49ers2.JPG', 'San Francisco 49ers | NFL')"> 
+                        <img data-src="experiences/sport/NFL-49ers.JPG" onclick="openModal('experiences/sport/NFL-49ers.JPG', 'San Francisco 49ers | NFL')"> 
+                        <img data-src="experiences/sport/NFL-Lions2.JPG" onclick="openModal('experiences/sport/NFL-Lions2.JPG', 'Detroit Lions | NFL')">
+                        <img data-src="experiences/sport/NFL-Lions1.png" onclick="openModal('experiences/sport/NFL-Lions1.png', 'Detroit Lions | NFL')">
+                        <!-- Soccer -->
+                        <img data-src="experiences/sport/MLS-Messi.jpg" onclick="openModal('experiences/sport/MLS-Messi.jpg', 'Lionel Messi | MLS')">
+                        <!-- NBA -->
+                        <img data-src="experiences/sport/NBA-ChristmasGames-Warriors-Lakers.JPG" onclick="openModal('experiences/sport/NBA-ChristmasGames-Warriors-Lakers.JPG', 'Christmas Games | Warriors vs Lakers | NBA')">
+                        <img data-src="experiences/sport/NBA-LBJ.JPG" onclick="openModal('experiences/sport/NBA-LBJ.JPG', 'LeBron James | NBA')">
+                        <img data-src="experiences/sport/NBA-heat.jpg" onclick="openModal('experiences/sport/NBA-heat.jpg', 'Miami Heat | NBA Finals')">
+                        <img data-src="experiences/sport/NBA-Curry.jpg" onclick="openModal('experiences/sport/NBA-Curry.jpg', 'Stephen Curry | NBA')">
+                        <img data-src="experiences/sport/NBA-KD.jpg" onclick="openModal('experiences/sport/NBA-KD.jpg', 'Kevin Durant | NBA')">
+                        <img data-src="experiences/sport/NBA-Leonard.jpg" onclick="openModal('experiences/sport/NBA-Leonard.jpg', 'Kawhi Leonard | NBA')">
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p style="text-align:center">
+      <a href="index.html">Back to Homepage</a>
+    </p>
+  </div>
+
+  <!-- Modal for Enlarged Image -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">×</span>
+    <span class="nav-arrow left" onclick="showImage(currentSection, currentImageIndex - 1)">❮</span>
+    <div class="modal-content">
+      <img id="modalImage">
+      <div class="caption" id="captionText"></div>
+      <div class="photo-counter" id="photoCounter"></div>
+    </div>
+    <span class="nav-arrow right" onclick="showImage(currentSection, currentImageIndex + 1)">❯</span>
+  </div>
+
+  <script>
+    // Store the current section and image index for navigation
+    let currentSection = '';
+    let currentImageIndex = 0;
+    let imageData = {
+      travels: [],
+      shows: [],
+      sports: []
+    };
+
+    // Initialize image data and lazy loading
+    document.addEventListener('DOMContentLoaded', function() {
+      // Lazy loading with Intersection Observer
+      const images = document.querySelectorAll('.gallery img[data-src]');
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            img.classList.add('loaded');
+            img.removeAttribute('data-src');
+            observer.unobserve(img);
+          }
+        });
+      }, { rootMargin: '0px 0px 100px 0px' }); // Load 100px before entering viewport
+
+      images.forEach(img => observer.observe(img));
+
+      // Initialize image data for modal navigation
+      ['travels', 'shows', 'sports'].forEach(section => {
+        const gallery = document.querySelector(`#${section}-content .gallery`);
+        if (gallery) {
+          const images = gallery.querySelectorAll('img');
+          images.forEach((img, index) => {
+            const onclickAttr = img.getAttribute('onclick');
+            const captionMatch = onclickAttr.match(/openModal\('[^']+', '([^']+)'\)/);
+            const caption = captionMatch ? captionMatch[1] : '';
+            
+            imageData[section].push({
+              src: img.dataset.src || img.src, // Use data-src if available, else src
+              caption: caption
+            });
+            img.addEventListener('click', () => {
+              currentSection = section;
+              currentImageIndex = index;
+              openModal(img.dataset.src || img.src, caption);
+            });
+          });
+
+          // Add swipe support to the modal
+          let touchStartX = 0;
+          let touchEndX = 0;
+          const modalImage = document.getElementById("modalImage");
+
+          modalImage.addEventListener('touchstart', function(event) {
+            touchStartX = event.changedTouches[0].screenX;
+          });
+
+          modalImage.addEventListener('touchend', function(event) {
+            touchEndX = event.changedTouches[0].screenX;
+            handleSwipe();
+          });
+
+          function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) {
+              showImage(currentSection, currentImageIndex + 1);
+            }
+            if (touchEndX > touchStartX + swipeThreshold) {
+              showImage(currentSection, currentImageIndex - 1);
+            }
+          }
+        }
+      });
+    });
+
+    function openModal(src, caption) {
+      const modal = document.getElementById("myModal");
+      modal.style.display = "flex";
+      modal.style.opacity = "0";
+      setTimeout(() => { modal.style.opacity = "1"; }, 10);
+      document.getElementById("modalImage").src = src;
+      document.getElementById("captionText").innerText = caption;
+      document.getElementById("photoCounter").innerText = `Photo ${currentImageIndex + 1} of ${imageData[currentSection].length}`;
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("myModal");
+      modal.style.opacity = "0";
+      setTimeout(() => { modal.style.display = "none"; }, 300);
+    }
+
+    function showImage(section, index) {
+      if (index < 0) index = imageData[section].length - 1;
+      if (index >= imageData[section].length) index = 0;
+      currentImageIndex = index;
+      const image = imageData[section][index];
+      openModal(image.src, image.caption);
+    }
+
+    window.onclick = function(event) {
+      if (event.target == document.getElementById("myModal")) {
+        closeModal();
+      }
+    }
+
+    document.addEventListener('keydown', function(event) {
+      if (document.getElementById("myModal").style.display === "flex") {
+        if (event.key === "Escape" || event.key === " ") {
+          event.preventDefault();
+          closeModal();
+        } else if (event.key === "ArrowLeft") {
+          showImage(currentSection, currentImageIndex - 1);
+        } else if (event.key === "ArrowRight") {
+          showImage(currentSection, currentImageIndex + 1);
+        }
+      }
+    });
+
+    function toggleSection(section) {
+      const content = document.getElementById(section + '-content');
+      const arrow = document.getElementById(section + '-arrow');
+      if (content.style.display === "block") {
+        content.style.opacity = "0";
+        setTimeout(() => {
+          content.style.display = "none";
+          arrow.classList.remove("up");
+          arrow.classList.add("down");
+        }, 300);
+      } else {
+        content.style.display = "block";
+        setTimeout(() => { content.style.opacity = "1"; }, 10);
+        arrow.classList.remove("down");
+        arrow.classList.add("up");
+      }
+    }
+  </script>
+</body>
+</html>
